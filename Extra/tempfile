@@ -1,0 +1,26 @@
+ // $('#stockledgerChart').highcharts({
+    //     chart: {
+    //         plotBackgroundColor: null,
+    //         plotBorderWidth: 1,//null,
+    //         plotShadow: false
+    //     },
+    //      credits: {
+    //         enabled: false
+    //     },
+    //     title: {
+    //         text: 'Recent Stock Status'
+    //     },
+    //     series: [{
+    //         type: 'pie',
+    //         name: 'Available Quantity',
+             data: [
+               <?php $x=1; foreach ($slchart->result() as $rows) {
+          ?>
+          
+            [  '<?php echo $rows->Name; ?>',
+             <?php echo $rows->Avail; ?>]<?php echo (($x == $slchart->num_rows()) ? null : ","); ?>
+           <?php
+        $x=1; } ?>
+             ]
+    //     }]
+    // });
