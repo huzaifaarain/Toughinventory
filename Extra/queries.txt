@@ -1,2 +1,0 @@
-select purchases.id,suppliers.name, date,reference_no,note,tax_per, CONCAT(products.name,purchase_items.quantity) as idetail from purchases INNER JOIN suppliers on suppliers.id = purchases.supplier_id INNER JOIN purchase_items on purchase_items.purchase_id = purchases.id INNER JOIN products on products.id = purchase_items.product_id
-
